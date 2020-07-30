@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myrecyclerview.adapter.GridHeroAdapter
 import com.example.myrecyclerview.adapter.ListHeroAdapter
 import com.example.myrecyclerview.model.Hero
 import com.example.myrecyclerview.model.HeroesData
@@ -44,17 +46,27 @@ class MainActivity : AppCompatActivity() {
 
     private fun setMode(selectedMode: Int) {
         when (selectedMode) {
-            R.id.actio_list -> {
-
+            R.id.action_list -> {
+                showRecyclerList()
             }
 
             R.id.action_grid -> {
-
+                showRecyclerGrid()
             }
 
             R.id.action_cardView -> {
                 
             }
+
+            R.id.action_about -> {
+                
+            }
         }
+    }
+
+    private fun showRecyclerGrid() {
+        rvHeroes.layoutManager = GridLayoutManager(this, 2)
+        val gridHeroAdapter = GridHeroAdapter(list)
+        rvHeroes.adapter = gridHeroAdapter
     }
 }

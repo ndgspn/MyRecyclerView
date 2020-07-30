@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/actio_list"
+        android:id="@+id/action_list"
         android:title="@string/list"
         app:showAsAction="never" />
     <item
@@ -13,6 +13,9 @@
         android:id="@+id/action_cardView"
         android:title="@string/with_cardview"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_about"
+        android:title="@string/menu_about" />
 
 
 </menu>
