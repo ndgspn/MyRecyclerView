@@ -1,5 +1,6 @@
 package com.example.myrecyclerview
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -63,6 +64,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.action_about -> {
+                title = "About"
+                showAbout()
             }
         }
         setActionBarTitle(title)
@@ -104,5 +107,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun showSelectedHero(hero: Hero) {
         Toast.makeText(this, "Kamu memilih ${hero.name}", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun showAbout() {
+        val aboutIntent: Intent = Intent(this@MainActivity, AboutActivity::class.java)
+        startActivity(aboutIntent)
     }
 }
